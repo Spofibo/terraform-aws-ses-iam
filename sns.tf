@@ -6,10 +6,11 @@ resource "aws_sns_topic" "bounce_notifications" {
   name  = "${var.name_prefix}-bounce-notifications"
 }
 
-resource "aws_sns_topic_subscription" "mailster_bounce_configuration" {
+resource "aws_sns_topic_subscription" "https_bounce_configuration" {
+  count     = var.enable_bounce_handling ? 1 : 0
   topic_arn = aws_sns_topic.bounce_notifications[0].arn
   protocol  = "https"
-  endpoint  = var.mailster_bounce_endpoint
+  endpoint  = var.https_bounce_endpoint
 }
 
 ################################

@@ -14,8 +14,8 @@ variable "enable_bounce_handling" {
   default     = false
 }
 
-variable "mailster_bounce_endpoint" {
-  description = "Mailster's endpoint for the SNS bounces subscription"
+variable "https_bounce_endpoint" {
+  description = "HTTPS endpoint for the SNS bounces subscription"
   type        = string
 }
 
