@@ -2,6 +2,11 @@ resource "aws_ses_domain_identity" "this" {
   domain = var.domain_name
 }
 
+resource "aws_ses_domain_mail_from" "this" {
+  domain                 = aws_ses_domain_identity.this.domain
+  mail_from_domain       = "bounce.${aws_ses_domain_identity.this.domain}"
+}
+
 resource "aws_ses_configuration_set" "bounce" {
   name = "${var.name_prefix}-bounce-configuration"
 }
