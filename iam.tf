@@ -1,5 +1,5 @@
 resource "aws_iam_user" "this" {
-  name = "${var.name_prefix}-mailster"
+  name = "${var.name_prefix}-ses"
 }
 
 resource "aws_iam_access_key" "this" {
