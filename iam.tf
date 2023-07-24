@@ -1,7 +1,3 @@
-resource "aws_ses_domain_identity" "this" {
-  domain = var.domain_name
-}
-
 resource "aws_iam_user" "this" {
   name = "${var.name_prefix}-mailster"
 }
@@ -26,11 +22,6 @@ resource "aws_iam_user_policy" "this" {
           "ses:ListIdentities"
         ],
         Resource = "*",
-        # Condition = {
-        #   StringEquals = {
-        #     "ses:FromAddress" : "marketing@example.com"
-        #   }
-        # }
       }
     ]
   })
