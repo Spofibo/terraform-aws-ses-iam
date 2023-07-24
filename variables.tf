@@ -27,6 +27,12 @@ variable "enable_complaint_handling" {
 
 variable "notification_recepients" {
   description = "A list of emails where to send "
-  type        = list(any)
+  type        = list(string)
+  default     = []
+}
+
+variable "ses_email_identities" {
+  description = "SES email identities"
+  type        = list(string)
   default     = []
 }
