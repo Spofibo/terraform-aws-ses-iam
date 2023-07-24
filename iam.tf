@@ -18,6 +18,7 @@ resource "aws_iam_user_policy" "this" {
         Action = [
           "ses:SendRawEmail",
           "ses:GetSendQuota",
+          "ses:GetAccount",
           "ses:VerifyEmailIdentity",
           "ses:ListIdentities"
         ],
